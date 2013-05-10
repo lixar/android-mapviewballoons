@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.lixar.readystatesoftware</groupId>
-	<artifactId>root</artifactId>
-	<version>1.2-SNAPSHOT</version>	
-	<packaging>pom</packaging>
-	<name>MapViewBalloons - Root POM</name>
-	
     <parent>
         <groupId>com.lixar.maven</groupId>
         <artifactId>super-pom</artifactId>
         <version>0.2</version>
     </parent>
-	
+
+	<groupId>com.lixar.readystatesoftware</groupId>
+	<artifactId>root</artifactId>
+	<version>1.2-SNAPSHOT</version>	
+	<packaging>pom</packaging>
+	<name>MapViewBalloons - Root POM</name>
+		
     <scm>
         <connection>scm:git:git@github.com:lixar/android-mapviewballoons.git</connection>
         <developerConnection>scm:git:git@github.com:lixar/android-mapviewballoons.git</developerConnection>
