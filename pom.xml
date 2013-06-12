@@ -21,6 +21,7 @@
 
 	<modules>
 		<module>android-mapviewballoons</module>
+		<module>android-mapviewballoons-example</module>
 	</modules>
 
     <properties>
@@ -37,6 +38,21 @@
         <android.version>4.0.1.2</android.version>
         <android.maps.version>8_r2</android.maps.version>
     </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.google.android</groupId>
+            <artifactId>android</artifactId>
+            <version>${android.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.google.android.maps</groupId>
+            <artifactId>maps</artifactId>
+            <version>${android.maps.version}</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
 
 	<build>
 		<plugins>
