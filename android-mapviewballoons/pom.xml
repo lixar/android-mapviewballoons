@@ -4,27 +4,12 @@
     <parent>
         <groupId>com.lixar.readystatesoftware</groupId>
         <artifactId>root</artifactId>
-        <version>1.2-SNAPSHOT</version>	
+        <version>1.2-SNAPSHOT</version>
     </parent>
-	
+
 	<artifactId>mapviewballoons</artifactId>
 	<packaging>apklib</packaging>
 	<name>MapViewBalloons - Library</name>
-
-    <dependencies>
-        <dependency>
-            <groupId>com.google.android</groupId>
-            <artifactId>android</artifactId>
-            <version>4.0.1.2</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.google.android.maps</groupId>
-            <artifactId>maps</artifactId>
-            <version>8_r2</version>
-            <scope>provided</scope>
-        </dependency>
-    </dependencies>
 
     <build>
     	<sourceDirectory>src</sourceDirectory>
@@ -32,14 +17,14 @@
             <plugin>
                 <groupId>com.jayway.maven.plugins.android.generation2</groupId>
                 <artifactId>android-maven-plugin</artifactId>
-                <version>3.1.1</version>
+                <version>${android-maven-plugin.version}</version>
                 <configuration>
                     <androidManifestFile>${project.basedir}/AndroidManifest.xml</androidManifestFile>
                     <assetsDirectory>${project.basedir}/assets</assetsDirectory>
                     <resourceDirectory>${project.basedir}/res</resourceDirectory>
                     <nativeLibrariesDirectory>${project.basedir}/src/main/native</nativeLibrariesDirectory>
                     <sdk>
-                        <platform>15</platform>
+                        <platform>${sdk.platform}</platform>
                     </sdk>
                     <undeployBeforeDeploy>true</undeployBeforeDeploy>
                 </configuration>
@@ -48,10 +33,10 @@
 
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>2.3.2</version>
+                <version>${maven-compiler-plugin.version}</version>
                 <configuration>
-                    <source>1.6</source>
-                    <target>1.6</target>
+                    <source>${jdk.version}</source>
+                    <target>${jdk.version}</target>
                 </configuration>
             </plugin>
         </plugins>

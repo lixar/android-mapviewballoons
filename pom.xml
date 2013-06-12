@@ -1,18 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-    <parent>
-        <groupId>com.lixar.maven</groupId>
-        <artifactId>super-pom</artifactId>
-        <version>0.2</version>
-    </parent>
 
 	<groupId>com.lixar.readystatesoftware</groupId>
 	<artifactId>root</artifactId>
-	<version>1.2-SNAPSHOT</version>	
+	<version>1.2-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>MapViewBalloons - Root POM</name>
-		
+
     <scm>
         <connection>scm:git:git@github.com:lixar/android-mapviewballoons.git</connection>
         <developerConnection>scm:git:git@github.com:lixar/android-mapviewballoons.git</developerConnection>
@@ -21,23 +16,54 @@
 
 	<modules>
 		<module>android-mapviewballoons</module>
+		<module>android-mapviewballoons-example</module>
 	</modules>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <!-- Plugins -->
+        <jdk.version>1.6</jdk.version>
+        <sdk.platform>15</sdk.platform>
+        <android-maven-plugin.version>3.1.1</android-maven-plugin.version>
+        <maven-compiler-plugin.version>2.3.2</maven-compiler-plugin.version>
+        <maven-release-plugin.version>2.2.1</maven-release-plugin.version>
+
+        <!-- Dependencies -->
+        <android.version>4.0.1.2</android.version>
+        <android.maps.version>8_r2</android.maps.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.google.android</groupId>
+            <artifactId>android</artifactId>
+            <version>${android.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.google.android.maps</groupId>
+            <artifactId>maps</artifactId>
+            <version>${android.maps.version}</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
 
 	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>2.3.2</version>
+				<version>${maven-compiler-plugin.version}</version>
 				<configuration>
-					<source>1.6</source>
-					<target>1.6</target>
+					<source>${jdk.version}</source>
+					<target>${jdk.version}</target>
 				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-release-plugin</artifactId>
-				<version>2.2.1</version>
+				<version>${maven-release-plugin.version}</version>
 				<configuration>
 					<preparationGoals>clean install</preparationGoals>
 					<autoVersionSubmodules>true</autoVersionSubmodules>
