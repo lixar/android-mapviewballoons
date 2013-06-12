@@ -9,10 +9,10 @@
 
 	<groupId>com.lixar.readystatesoftware</groupId>
 	<artifactId>root</artifactId>
-	<version>1.2-SNAPSHOT</version>	
+	<version>1.2-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>MapViewBalloons - Root POM</name>
-		
+
     <scm>
         <connection>scm:git:git@github.com:lixar/android-mapviewballoons.git</connection>
         <developerConnection>scm:git:git@github.com:lixar/android-mapviewballoons.git</developerConnection>
@@ -23,21 +23,36 @@
 		<module>android-mapviewballoons</module>
 	</modules>
 
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <!-- Plugins -->
+        <jdk.version>1.6</jdk.version>
+        <sdk.platform>15</sdk.platform>
+        <android-maven-plugin.version>3.1.1</android-maven-plugin.version>
+        <maven-compiler-plugin.version>2.3.2</maven-compiler-plugin.version>
+        <maven-release-plugin.version>2.2.1</maven-release-plugin.version>
+
+        <!-- Dependencies -->
+        <android.version>4.0.1.2</android.version>
+        <android.maps.version>8_r2</android.maps.version>
+    </properties>
+
 	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>2.3.2</version>
+				<version>${maven-compiler-plugin.version}</version>
 				<configuration>
-					<source>1.6</source>
-					<target>1.6</target>
+					<source>${jdk.version}</source>
+					<target>${jdk.version}</target>
 				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-release-plugin</artifactId>
-				<version>2.2.1</version>
+				<version>${maven-release-plugin.version}</version>
 				<configuration>
 					<preparationGoals>clean install</preparationGoals>
 					<autoVersionSubmodules>true</autoVersionSubmodules>
